@@ -1,0 +1,49 @@
+<!--<center><div class="container my-5 mt-5">
+    <div class="row mt-5 my-5">
+
+        <div class="col-md-6 main mt-5 my-5">
+           <center>
+            <form action="/admin/login" method="post">
+                   {{#if loginErr}}
+                   <p class="error">{{loginErr}}</p>
+                   {{/if}}
+                <h1>Admin Login </h1>
+                    <br>
+
+                <input class="box" type="email" name="email" id="email" placeholder="E-Mail " required /><br>
+                <br>
+                <input class="box" type="password" name="password" id="password" placeholder="Password " required /><br>
+                <br>
+                <input type="submit" id="submitDetails" name="submitDetails" value="Submit" /><br>
+
+            </form>
+           </center>
+        </div>
+    </div>
+</div>
+</center>-->
+
+
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Admin Login</h2>
+            <form action="/admin/login" method="post">
+            
+                <div class="form-group">
+                    <label for="">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control"  id="password" name="password" placeholder="Password" required>
+                </div>
+                {{#if loginError}}
+                   <p class="error text-danger">{{loginError}}</p>
+                {{/if}}
+                
+                <button type="submit" id="submitDetails" name="submitDetails" class="btn btn-primary float-center">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

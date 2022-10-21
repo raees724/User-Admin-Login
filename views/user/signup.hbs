@@ -1,0 +1,122 @@
+<!--<html>
+<body>
+<div class="container" >
+        <div class="row">
+        <div class="col-md-3">
+                      
+        </div>
+                  
+        <div class="col-md-6 main" id="error">
+                      
+            <form action="/signup" method="post" id="form">
+            {{#if signupErr}}
+                   <p class="error">{{signupErr}}</p>
+            {{/if}}
+            <h1> Signup form </h1>
+                              
+            <input class="box" type="text" name="name" id="name" 
+            placeholder="Name"  required /><br>
+                              
+            <input class="box" type="email" name="email" id="email" 
+            placeholder="E-Mail " required /><br>
+                              
+            <input class="box" type="password" name="password" 
+            id="password" placeholder="Password " required/><br>
+                              
+            <input class="box" type="text" name="phone" id="phone"  
+            placeholder="Phone Number " required/><br>
+                        <br>
+            <input type="submit" id="submit"  
+            name="submit" value="submit" /><br>
+                      
+            </form>
+                      
+        </div>
+                  
+    </div>
+    </div>
+    
+    <script>
+        const name = document.getElementById('name')
+        const password = document.getElementById('password')
+        const form = document.getElementById('form')
+        const errorElement = document.getElementById('error')
+        const email = document.getElementById('email')
+        
+       
+        form.addEventListener("submit",(e)=>{
+            let messages = []
+            if(password.value.length<=2) messages.push('Passwords must atleast contain 3 characters ') 
+            if(password.value.length>=20) messages.push('password cant be longer than 19 characters')  
+            if(name.value==null) messages.push('null value cant be considered as a valid username')
+            if(name.value.trim()=="") messages.push('This kind of Usernames are not allowed')
+            if(password.value.trim()=="") messages.push('Blank passwords are not allowed')
+            if(messages.length>0){
+                 e.preventDefault()
+                 errorElement.innerText = messages.join('+')
+            }  
+        })
+    </script>
+    </body>
+    </html>-->
+
+
+
+<html>
+<body>
+
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Sign-Up User</h2>
+            <form action="/signup" method="post">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="">Email address</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="">Phone number</label>
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                </div>
+                {{#if signupErr}}
+                   <p class="error text-danger">{{signupErr}}</p>
+                {{/if}}
+                <a href="/login">Already have an account?</a>
+                <button type="submit" class="btn btn-primary float-right" name="submit" id="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+        const name = document.getElementById('name')
+        const password = document.getElementById('password')
+        const form = document.getElementById('form')
+        const errorElement = document.getElementById('error')
+        const email = document.getElementById('email')
+        
+       
+        form.addEventListener("submit",(e)=>{
+            let messages = []
+            if(password.value.length<=2) messages.push('Passwords must atleast contain 3 characters ') 
+            if(password.value.length>=20) messages.push('password cant be longer than 19 characters')  
+            if(name.value==null) messages.push('null value cant be considered as a valid username')
+            if(name.value.trim()=="") messages.push('This kind of Usernames are not allowed')
+            if(password.value.trim()=="") messages.push('Blank passwords are not allowed')
+            if(messages.length>0){
+                 e.preventDefault()
+                 errorElement.innerText = messages.join('+')
+            }  
+        })
+    </script>
+
+</body>
+</html>

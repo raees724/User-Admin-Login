@@ -1,0 +1,67 @@
+<!--<style>
+    .ody{display: flex; justify-content: center; align-items: center;
+     }
+    
+</style>
+<div class="ody">
+<div class="col-md-6 main">
+                      
+            <form action="/admin/edit-user/{{user._id}}" method="post">
+                {{#if signupErr}}
+                   <p class="error">{{signupErr}}</p>
+            {{/if}}      
+            <h1>Edit user</h1>
+                              
+            <input class="box" type="text" name="name" id="name" value="{{user.name}}" 
+            placeholder="Name"  required /><br>
+                              
+            <input class="box" type="email" name="email" id="email" value="{{user.email}}"
+            placeholder="E-Mail " required /><br>
+                              
+            <input class="box" type="password" name="password" id="password" value="{{user.password}}" placeholder="Password " required /><br>
+                <br>
+                
+            <input class="box" type="text" name="phone" id="phone"  value="{{user.phone}}"
+            placeholder="Phone Number " required/><br>
+                        <br>
+            <input type="submit" id="submitDetails"  
+            name="submitDetails" value="Submit" /><br>
+                      
+            </form>
+                      
+        </div>-->
+
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Edit User</h2>
+            <form action="/admin/edit-user/{{user._id}}" method="post">
+                
+                <div class="form-group">
+                    <label for="">User Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="User Name" value="{{user.name}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{user.email}}" required>
+                </div>
+                <div class="form-group" style="display:none">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control"  id="password" name="password" placeholder="Password" value="{{user.password}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" class="form-control"  id="phone" name="phone" placeholder="Phone Number" value="{{user.phone}}" required>
+                </div>
+                {{#if signupErr}}
+                   <p class="error text-danger">{{signupErr}}</p>
+                {{/if}}
+                
+                <button type="submit" id="submit" name="submit" class="btn btn-primary float-center">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

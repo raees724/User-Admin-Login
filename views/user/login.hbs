@@ -1,0 +1,56 @@
+<!--<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 main">
+
+            <form action="/login" method="post">
+                   {{#if loginErr}}
+                   <p class="error">{{loginErr}}</p>
+                   {{/if}}
+                <h1> Login </h1>
+
+                <input class="box" type="text" name="name" id="name" placeholder="Name" required /><br>
+
+                <input class="box" type="email" name="email" id="email" placeholder="E-Mail " required /><br>
+
+                <input class="box" type="password" name="password" id="password" placeholder="Password " required /><br>
+                <br>
+                <a href="/signup">Create an account ?</a> <br>
+                <input type="submit" id="submitDetails" name="submitDetails" value="Submit" /><br>
+
+            </form>
+
+        </div>
+    </div>
+</div>-->
+
+
+
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">User Login</h2>
+            <form action="/login" method="post">
+            
+                <div class="form-group" style="display:none">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control"  id="password" name="password" placeholder="Password" required>
+                </div>
+                {{#if loginErr}}
+                <p class="error text-center text-danger">{{loginErr}}</p>
+            {{/if}}
+                <a href="/signup">Create new account?</a>
+                <button type="submit" id="submitDetails" name="submitDetails" class="btn btn-dark float-right">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

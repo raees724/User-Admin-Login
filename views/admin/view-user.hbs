@@ -1,0 +1,44 @@
+
+<section>
+  
+  <div class="container ">
+    <div class="row mt-3 mb-3 pr-3">
+      <a href="/admin/add-user" class="btn btn-dark ml-auto ">Add Users</a>
+    </div>  
+    <table class="table " id="userTable" style="background: rgb(63, 63, 54);
+background: linear-gradient(90deg, rgb(80, 76, 54) 0%, rgb(68, 77, 90) 46%, rrgb(57, 70, 52)61%, rgb(65, 50, 50) 100%);color:white; border: radius 10px;">
+      <thead>
+        <tr>
+          {{!-- <th>#</th> --}}
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          {{!-- <th>Mob</th> --}}
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user}}
+        <tr>
+          {{!-- <th scope="row">1</th> --}}
+          <td>{{this.name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.password}}</td>
+          {{!-- <td>{{this.phone}}</td> --}}
+          <td><a href="admin/edit-user/{{this._id}}" class="btn btn-success">Edit</a>
+            <a href="admin/delete-user/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('Sure you want to remove {{this.name}}')">Delete</a>
+          </td>
+
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
+<script>
+    $(function () {
+      $('#userTable').DataTable();
+    });
+  </script>
+  
